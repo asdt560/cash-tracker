@@ -1,0 +1,5 @@
+<% @categories.each do |category| %>
+  <img class='categoryicon' src=<%= category.icon %> >
+  <%= category.name %>
+<% end %>
+<%= link_to "Add a new Category", new_category_path %>
