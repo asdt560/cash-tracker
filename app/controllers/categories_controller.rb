@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   load_and_authorize_resource except: :create
   def index
-    @categories = Category.where(user_id: current_user.id)
+    @categories = Category.includes(:payments).where(user_id: current_user.id)
   end
 
   def new

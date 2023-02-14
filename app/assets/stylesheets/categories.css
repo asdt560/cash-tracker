@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  width: 90%;
+  height: 10vh;
+  padding: 1rem;
+}
+
+.categoryicon {
+  width: 10vh;
+  height: 100%;
+}
+
+.categoryinfo {
+  align-self: flex-start;
+  padding: 1rem;
+}

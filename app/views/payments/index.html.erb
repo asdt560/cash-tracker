@@ -1,0 +1,12 @@
+<main class="container">
+  <% @payments.each do |payment| %>
+    <div class="card">
+      <div class="categoryinfo">
+        <%= payment.name %>
+        <%= number_to_currency(payment.amount.fdiv(100)) %>
+        <%= payment.created_at.strftime("%b %d %Y") %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "Add a new Transaction", new_category_payment_path %>
+</main>
