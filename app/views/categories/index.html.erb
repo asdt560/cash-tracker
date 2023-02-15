@@ -1,0 +1,13 @@
+<main class="container">
+  <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+  <% @categories.each do |category| %>
+    <a class="card" href= <%= category_payments_path(category.id) %>>
+      <img class='categoryicon' src=<%= category.icon %> >
+      <div class="categoryinfo">
+        <%= category.name %>
+        <%= number_to_currency(category.sum_of_payments.fdiv(100))%>
+      </div>
+    </a>
+  <% end %>
+  <%= link_to "Add a new Category", new_category_path %>
+</main>

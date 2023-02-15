@@ -7,5 +7,6 @@ class Ability
     return unless user.present?
 
     can :read, :all
+    can :manage, :all
   end
 end

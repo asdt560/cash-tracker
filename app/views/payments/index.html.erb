@@ -1,0 +1,20 @@
+<nav class='navbar'>
+  <%= link_to "<", categories_path %>
+  <h2>Transactions - <%= @category.name %></h2>
+</nav>
+<main class="container">
+  <div>
+    <p>Total:</p>
+    <%= number_to_currency(@category.sum_of_payments.fdiv(100))%>
+  </div>
+  <% @payments.each do |payment| %>
+    <div class="card">
+      <div class="categoryinfo">
+        <%= payment.name %>
+        <%= number_to_currency(payment.amount.fdiv(100)) %>
+        <%= payment.created_at.strftime("%b %d %Y") %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "Add a new Transaction", new_category_payment_path %>
+</main>
