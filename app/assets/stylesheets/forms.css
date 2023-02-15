@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxcontainer {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #434b54;
+}
+
+.checkboxcontainer > div {
+  padding: 0.5rem;
+  color: #434b54;
+}
+
+.formitem {
+  padding: 0.5rem;
+}
+
+.formitem > input {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
