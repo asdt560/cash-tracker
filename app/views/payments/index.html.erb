@@ -3,6 +3,10 @@
   <h2>Transactions - <%= @category.name %></h2>
 </nav>
 <main class="container">
+  <div>
+    <p>Total:</p>
+    <%= number_to_currency(@category.sum_of_payments.fdiv(100))%>
+  </div>
   <% @payments.each do |payment| %>
     <div class="card">
       <div class="categoryinfo">
