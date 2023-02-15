@@ -4,7 +4,7 @@ class Category < ApplicationRecord
   validates :name, presence: true
 
   def sum_of_payments
-    payments = Payment.joins(:categories).select{ |a| a.category_ids.include?(self.id) }
+    payments = Payment.joins(:categories).select { |a| a.category_ids.include?(id) }
     total = 0
     payments.each do |payment|
       total += payment.amount

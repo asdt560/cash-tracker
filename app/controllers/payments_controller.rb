@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
   load_and_authorize_resource except: :create
   def index
     @category = Category.find(params[:category_id])
-    @payments = Payment.joins(:categories).select{ |a| a.category_ids.include?(@category.id) }
+    @payments = Payment.joins(:categories).select { |a| a.category_ids.include?(@category.id) }
   end
 
   def new
@@ -10,7 +10,6 @@ class PaymentsController < ApplicationController
   end
 
   def create
-
     @categories = Category.where(params[:category_ids])
     @payment = Payment.new(payment_params)
     @payment.author_id = current_user.id
@@ -22,6 +21,6 @@ class PaymentsController < ApplicationController
   end
 
   def payment_params
-    params.require(:payment).permit(:name, :amount, :category_ids => [])
+    params.require(:payment).permit(:name, :amount, category_ids: [])
   end
 end
