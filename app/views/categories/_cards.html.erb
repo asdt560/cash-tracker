@@ -1,0 +1,11 @@
+<div class="container subcontainer">
+  <% @categories.each do |category| %>
+    <a class="card" href= <%= category_payments_path(category.id) %>>
+      <img class='categoryicon' src=<%= category.icon %> >
+      <div class="categoryinfo">
+        <p><%= category.name %></p>
+        <p class="money"><%= number_to_currency(category.sum_of_payments.fdiv(100))%></p>
+      </div>
+    </a>
+  <% end %>
+  </div>

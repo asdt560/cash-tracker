@@ -1,5 +1,11 @@
 a {
   all: unset;
+  font-family: 'Nunito sans', sans-serif;
+  cursor: pointer;
+}
+
+* {
+  font-family: 'Nunito sans', sans-serif;
 }
 
 .container {
@@ -7,7 +13,17 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  background-color: #eae6e6;
+  position: relative;
+}
+
+.container > .card {
+  margin-top: 1rem;
+}
+
+.container.splash {
+  background-color: white;
 }
 
 .titlecontainer {

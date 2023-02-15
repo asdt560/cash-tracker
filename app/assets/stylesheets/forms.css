@@ -1,0 +1,60 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxcontainer {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #434b54;
+}
+
+.checkboxcontainer > div {
+  padding: 0.5rem;
+  color: #434b54;
+}
+
+.formitem {
+  padding: 0.5rem;
+}
+
+.formitem > input {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.signup {
+  text-align: center;
+}
+
+.signup > input {
+  background-color: #5fb523;
+  padding: 1rem;
+  color: white;
+  border: 2px solid white;
+  border-radius: 3px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Nunito sans', sans-serif;
+}
+
+.linkcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: underline;
+  color: #3778c2;
+}

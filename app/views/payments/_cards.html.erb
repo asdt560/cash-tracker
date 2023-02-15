@@ -1,0 +1,11 @@
+<div class="container subcontainer">
+  <% @payments.each do |payment| %>
+    <div class="card paymentcard">
+      <div class="paymentinfo">
+        <p><%= payment.name %></p>
+        <p class="money"><%= number_to_currency(payment.amount.fdiv(100)) %></p>
+      </div>
+      <p class="paydate"><%= payment.created_at.strftime("%d %b %Y") %></p>
+    </div>
+  <% end %>
+  </div>

@@ -16,6 +16,17 @@ body {
   align-self: center;
   position: absolute;
   top: -0.5px;
+  color: white;
+}
+
+.exit {
+  all: unset;
+  font-size: 1.7rem;
+  cursor: pointer;
+  position: absolute;
+  top: -0.5px;
+  color: white;
+  align-self: center;
 }
 
 .navbar > h2 {
@@ -24,4 +35,5 @@ body {
   align-self: center;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }

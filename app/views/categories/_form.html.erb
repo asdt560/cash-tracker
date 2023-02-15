@@ -1,5 +1,5 @@
  <div class="category_form">
-  <%= form_with(model: category) do |form| %>
+  <%= form_with(model: category, class: "form") do |form| %>
     <% if category.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -11,18 +11,18 @@
         </ul>
       </div>
     <% end %>
-    <div>
+    <div class="formitem">
       <%= form.label :name, style: "display: block" %>
       <%= form.text_field :name %>
     </div>
 
-    <div>
+    <div class="formitem">
       <%= form.label "Image Link", style: "display: block" %>
       <%= form.text_field :icon %>
     </div>
     
-    <span>
-      <%= form.submit "Add category", :class => "button_style" %>
-    </span>
+    <div class="greenbuttondiv">
+      <%= form.submit "Add category", :class => "greenbutton formbutton" %>
+    </div>
     
   <% end %>
