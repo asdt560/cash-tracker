@@ -10,6 +10,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
+
     @categories = Category.where(params[:category_ids])
     @payment = Payment.new(payment_params)
     @payment.author_id = current_user.id

@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  background-color: #3778c2;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.navbar > a {
+  font-size: 1.7rem;
+  align-self: center;
+  position: absolute;
+  top: -0.5px;
+}
+
+.navbar > h2 {
+  font-size: 1rem;
+  margin: 0;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}

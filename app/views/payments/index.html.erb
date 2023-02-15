@@ -1,3 +1,7 @@
+<nav class='navbar'>
+  <%= link_to "<", categories_path %>
+  <h2>Transactions - <%= @category.name %></h2>
+</nav>
 <main class="container">
   <% @payments.each do |payment| %>
     <div class="card">
