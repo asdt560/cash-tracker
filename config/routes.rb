@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   root "users#index"
   resources :users, only: [:index]
-  resources :categories do
-    resources :payments
+  resources :categories, only: [:index, :new, :create] do
+    resources :payments, only: [:index, :new, :create]
   end
 end
