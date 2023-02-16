@@ -86,5 +86,5 @@ test:
 production:
   <<: *default
   database: cash_tracker_production
-  username: postgres
-  password: <%= ENV["password"] %>
+  username: cashtracker
+  password: <%= ENV['DATABASE_URL'] %
