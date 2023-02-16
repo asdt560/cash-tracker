@@ -2,7 +2,8 @@ class PaymentsController < ApplicationController
   load_and_authorize_resource except: :create
   def index
     @category = Category.find(params[:category_id])
-    @payments = Payment.joins(:categories).select { |a| a.category_ids.include?(@category.id) }
+    payments = Payment.joins(:categories).select { |a| a.category_ids.include?(@category.id) }
+    @payments = payments.sort_by{ |obj| obj.created_at }.reverse
   end
 
   def new

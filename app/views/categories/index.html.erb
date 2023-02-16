@@ -2,7 +2,7 @@
   <%= button_to 'x', destroy_user_session_path, class: "exit", method: :delete %>
   <h2>Categories</h2>
 </nav>
-<main class="container">
+<main class="container two">
   <%= render 'cards' %>
   <div class="greenbuttondiv">
     <%= link_to "ADD A NEW CATEGORY", new_category_path, class: "greenbutton" %>

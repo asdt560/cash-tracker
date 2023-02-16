@@ -34,3 +34,7 @@ p {
   width: 90%;
   height: 88vh;
 }
+
+.container.two {
+  height: 95%;
+}
