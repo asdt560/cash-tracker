@@ -4,11 +4,11 @@ RSpec.describe 'Categories', type: :request do
   describe 'GET categories#index' do
     before(:each) do
       @user = User.new(name: 'nameofuser', email: 'asdt560@gmail.com', password: '6letters',
-                        encrypted_password: '$2a$12$192AtELpNZ0aZCfnSxs35umQYmbSn52FK8ML/vY.iZvDW4FvkvHn2')
+                       encrypted_password: '$2a$12$192AtELpNZ0aZCfnSxs35umQYmbSn52FK8ML/vY.iZvDW4FvkvHn2')
       @user.skip_confirmation!
       @user.confirm
       @user.save
-      @category = Category.create(name:"expenses", icon:"#", user: @user)
+      @category = Category.create(name: 'expenses', icon: '#', user: @user)
       sign_in @user
       get '/categories'
     end
@@ -28,11 +28,11 @@ RSpec.describe 'Categories', type: :request do
   describe 'GET categories#new' do
     before(:each) do
       @user = User.new(name: 'nameofuser', email: 'asdt560@gmail.com', password: '6letters',
-                        encrypted_password: '$2a$12$192AtELpNZ0aZCfnSxs35umQYmbSn52FK8ML/vY.iZvDW4FvkvHn2')
+                       encrypted_password: '$2a$12$192AtELpNZ0aZCfnSxs35umQYmbSn52FK8ML/vY.iZvDW4FvkvHn2')
       @user.skip_confirmation!
       @user.confirm
       @user.save
-      @category = Category.create(name:"expenses", icon:"#", user: @user)
+      @category = Category.create(name: 'expenses', icon: '#', user: @user)
       sign_in @user
       get '/categories/new'
     end
@@ -45,13 +45,13 @@ RSpec.describe 'Categories', type: :request do
     end
 
     it 'includes text' do
-      expect(response.body).to include("Add a Category")
+      expect(response.body).to include('Add a Category')
     end
   end
   describe 'POST categories#create' do
     before(:each) do
       @user = User.new(name: 'nameofuser', email: 'asdt560@gmail.com', password: '6letters',
-                        encrypted_password: '$2a$12$192AtELpNZ0aZCfnSxs35umQYmbSn52FK8ML/vY.iZvDW4FvkvHn2')
+                       encrypted_password: '$2a$12$192AtELpNZ0aZCfnSxs35umQYmbSn52FK8ML/vY.iZvDW4FvkvHn2')
       @user.skip_confirmation!
       @user.confirm
       @user.save
