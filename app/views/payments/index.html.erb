@@ -1,0 +1,14 @@
+<nav class='navbar'>
+  <%= link_to "<", categories_path %>
+  <h2>Transactions - <%= @category.name %></h2>
+</nav>
+<main class="container two">
+  <div class="total">
+    <p>Total:</p>
+    <p class="money"><%= number_to_currency(@category.sum_of_payments.fdiv(100))%></p>
+  </div>
+  <%= render 'cards' %>
+  <div class="greenbuttondiv">
+    <%= link_to "ADD A NEW TRANSACTION", new_category_payment_path, class: "greenbutton" %>
+  </div>
+</main>

@@ -1,0 +1,36 @@
+<div class="category_form">
+  <%= form_for :payment, url: category_payments_path, class: "form", method: :post do |form| %>
+    <% if payment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(payment.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+  
+        <ul>
+        <% payment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="checkboxcontainer">
+      <%= form.label "Categories (minimum one)", style: "display: block" %>
+      <%= form.collection_check_boxes(:category_ids, Category.where(user_id: current_user.id), :id, :name, include_hidden: false) do |m| %>
+        <div>
+          <%= m.check_box %> <%= m.label %>
+        </div>
+      <% end %>
+    </div>
+    <div class="formitem">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, placeholder: "Transaction Name" %>
+    </div>
+
+    <div class="formitem amount">
+      <%= form.label "Amount (In Cents/Pennies)", style: "display: block" %>
+      <%= form.number_field :amount %>
+    </div>
+
+    <div class="greenbuttondiv">
+      <%= form.submit "Add Transaction", :class => "greenbutton formbutton" %>
+    </div>
+  <% end %>
+</div>

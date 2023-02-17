@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  width: 80%;
+  height: 8vh;
+  padding: 1rem;
+  background-color: white;
+}
+
+p {
+  color: #434b54;
+  margin: 0;
+  font-family: 'Nunito sans', sans-serif;
+}
+
+.categoryicon {
+  width: 10vh;
+  height: 100%;
+}
+
+.categoryinfo {
+  align-self: flex-start;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.money {
+  font-weight: bold;
+}
+
+.container.subcontainer {
+  overflow-x: scroll;
+  width: 90%;
+  height: 88vh;
+}
+
+.container.two {
+  height: 95%;
+}

@@ -1,0 +1,23 @@
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 92%;
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 2px solid lightgrey;
+}
+
+.card.paymentcard {
+  flex-direction: column;
+}
+
+.paymentinfo {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+.paydate {
+  margin-top: 0.5rem;
+}
