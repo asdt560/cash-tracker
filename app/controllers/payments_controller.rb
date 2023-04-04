@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
   def create
     @categories = Category.where(params[:category_ids])
     params = payment_params
-    params[:amount] = (params[:amount].to_f*100).to_i
+    params[:amount] = (params[:amount].to_f * 100).to_i
     print params
     @payment = Payment.new(params)
     @payment.author_id = current_user.id
