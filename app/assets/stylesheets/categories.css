@@ -43,6 +43,8 @@ p {
 }
 
 .container.three {
+  width: 100%;
+  align-self: center;
   height: 92.5%;
   display: flex;
   flex-direction: column;

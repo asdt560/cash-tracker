@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -36,4 +35,21 @@ body {
   margin-left: auto;
   margin-right: auto;
   color: white;
+}
+
+.notice,
+.alert {
+  text-align: center;
+  animation-name: vanish;
+  animation-duration: 10s;
+}
+
+@keyframes vanish {
+  0% {
+    display: block;
+  }
+
+  100% {
+    display: none;
+  }
 }
