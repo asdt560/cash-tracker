@@ -2,7 +2,7 @@
   <%= link_to "<", categories_path %>
   <h2>Transactions - <%= @category.name %></h2>
 </nav>
-<main class="container two">
+<main class="container three">
   <div class="total">
     <p>Total:</p>
     <p class="money"><%= number_to_currency(@category.sum_of_payments.fdiv(100))%></p>

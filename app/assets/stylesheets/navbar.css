@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  width: 100vw;
   height: 100vh;
 }
 
@@ -9,13 +8,13 @@ body {
   background-color: #3778c2;
   position: relative;
   padding: 0.5rem;
+  height: 5%;
 }
 
 .navbar > a {
   font-size: 1.7rem;
   align-self: center;
   position: absolute;
-  top: -0.5px;
   color: white;
 }
 
@@ -24,7 +23,7 @@ body {
   font-size: 1.7rem;
   cursor: pointer;
   position: absolute;
-  top: -0.5px;
+  top: 4px;
   color: white;
   align-self: center;
 }

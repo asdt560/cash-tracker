@@ -11,7 +11,10 @@ class PaymentsController < ApplicationController
 
   def create
     @categories = Category.where(params[:category_ids])
-    @payment = Payment.new(payment_params)
+    params = payment_params
+    params[:amount] = (params[:amount].to_f * 100).to_i
+    print params
+    @payment = Payment.new(params)
     @payment.author_id = current_user.id
     if @payment.save
       redirect_to category_payments_path, notice: 'Payment was successfully created.'

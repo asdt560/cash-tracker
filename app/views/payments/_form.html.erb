@@ -25,8 +25,8 @@
     </div>
 
     <div class="formitem amount">
-      <%= form.label "Amount (In Cents/Pennies)", style: "display: block" %>
-      <%= form.number_field :amount %>
+      <%= form.label "Amount", style: "display: block" %>
+      <%= form.number_field :amount, step: 0.01 %>
     </div>
 
     <div class="greenbuttondiv">
