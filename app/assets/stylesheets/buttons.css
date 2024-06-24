@@ -12,6 +12,7 @@
 .greenbuttondiv {
   background-color: #5fb523;
   padding: 1rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
