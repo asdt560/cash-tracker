@@ -21,3 +21,17 @@
 html {
   height: 100%;
 }
+
+.notice {
+  background-color: #5fb523;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert {
+  background-color: #f00;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
