@@ -2,6 +2,6 @@
   <%= link_to "<", categories_path %>
   <h2>Profile - <%= @user.name %></h2>
 </nav>
-<div class='titlecontainer'>
-  <h1 class='maintitle'><%= @user.name %></h1>
+<div class='container'>
+  <%= link_to 'Edit User', edit_user_registration_path %>
 </div>

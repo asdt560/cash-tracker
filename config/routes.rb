@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
   end
   root "users#index"
-  resources :users, only: [:index]
+  resources :users, only: [:index, :edit, :update, :show]
   resources :categories, only: [:index, :new, :create] do
     resources :payments, only: [:index, :new, :create]
   end

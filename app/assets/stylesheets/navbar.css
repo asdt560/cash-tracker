@@ -8,7 +8,8 @@ body {
 .navbar {
   display: flex;
   background-color: #3778c2;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
 }
 
@@ -19,19 +20,24 @@ body {
   color: white;
 }
 
+.profile,
 .exit {
   all: unset;
   font-size: 1.7rem;
   cursor: pointer;
   color: white;
   align-self: center;
+  margin-right: 40px;
+}
+
+.profile {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .navbar > h2 {
   font-size: 1rem;
   margin: 0;
   align-self: center;
-  margin-left: auto;
-  margin-right: auto;
   color: white;
 }
