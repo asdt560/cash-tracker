@@ -4,4 +4,5 @@ class Payment < ApplicationRecord
   validates :amount, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :name, presence: true
   validates :category_ids, presence: true
+  validates :paid, inclusion: { in: [true, false] }, presence: true
 end

@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
   load_and_authorize_resource except: :create
   def index
-    @category = Category.includes(:payments).find(params[:category_id])
+    @category = Category.includes(:payments).find(params[:category_id]).where(user_id: current_user.id)
     @payments = @category.payments.sort_by(&:created_at).reverse
   end
 
@@ -13,6 +13,7 @@ class PaymentsController < ApplicationController
     @categories = Category.where(params[:category_ids])
     params = payment_params
     params[:amount] = (params[:amount].to_f * 100).to_i
+    params[:paid] = false
     print params
     @payment = Payment.new(params)
     @payment.author_id = current_user.id
@@ -21,6 +22,12 @@ class PaymentsController < ApplicationController
     else
       redirect_to category_payments_path, notice: 'Payment was not created.'
     end
+  end
+
+  def put
+    @payment = Payment.find(params[:id])
+    @payment.update(paid: true)
+    redirect_to category_payments_path, notice: 'Payment was successfully updated.'
   end
 
   def payment_params

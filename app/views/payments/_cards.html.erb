@@ -6,6 +6,9 @@
         <p class="money"><%= number_to_currency(payment.amount.fdiv(100)) %></p>
       </div>
       <p class="paydate"><%= payment.created_at.strftime("%d %b %Y") %></p>
+      <% if payment.paid == false %>
+        <%= link_to 'Pay', payment_path(payment), method: :put, class: 'btn btn-primary' %>
+      <% end %>
     </div>
   <% end %>
   </div>
