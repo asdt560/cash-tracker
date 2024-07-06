@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   root "users#index"
   resources :users, only: [:index, :edit, :update, :show]
   resources :categories, only: [:index, :new, :create] do
-    resources :payments, only: [:index, :new, :create]
+    resources :payments, only: [:index, :new, :create] do
+      put '/pay', to: 'payments#pay' 
+    end
   end
 end

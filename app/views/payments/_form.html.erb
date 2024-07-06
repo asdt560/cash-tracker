@@ -28,7 +28,7 @@
       <%= form.label "Amount", style: "display: block" %>
       <%= form.number_field :amount, step: 0.01 %>
     </div>
-
+      <%= form.hidden_field :paid, value: 'f' %>
     <div class="greenbuttondiv">
       <%= form.submit "Add Transaction", :class => "greenbutton formbutton" %>
     </div>
