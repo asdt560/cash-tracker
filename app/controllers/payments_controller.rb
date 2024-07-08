@@ -30,6 +30,12 @@ class PaymentsController < ApplicationController
     @payment.save
   end
 
+  private
+  def update_payments_list
+    render turbo_stream: turbo_stream.replace('total', partial: 'total')
+    render turbo_stream: turbo_stream.replace('cards', partial: 'cards', locals: { category: @category, payments: @payments })
+  end
+
   def payment_params
     params.require(:payment).permit(:name, :amount, :paid, category_ids: [])
   end

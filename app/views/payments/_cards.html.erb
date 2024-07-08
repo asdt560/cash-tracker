@@ -1,16 +1,17 @@
-<div class="container subcontainer">
-  <% @payments.each do |payment| %>
-    <div class="card paymentcard">
-      <div class="paymentinfo">
-        <p><%= payment.name %></p>
-        <p class="money"><%= number_to_currency(payment.amount.fdiv(100)) %></p>
+
+  <div class="container subcontainer">
+    <% @payments.each do |payment| %>
+      <div class="card paymentcard">
+        <div class="paymentinfo">
+          <p><%= payment.name %></p>
+          <p class="money"><%= number_to_currency(payment.amount.fdiv(100)) %></p>
+        </div>
+        <p class="paydate"><%= payment.created_at.strftime("%d %b %Y") %></p>
+        <% if payment.paid == false %>
+          <%= button_to 'Pay', category_payment_pay_path(@category.id, payment.id), method: :put, class: 'btn btn-primary' %>
+        <% else %>
+          <span>Paid</span>
+        <% end %>
       </div>
-      <p class="paydate"><%= payment.created_at.strftime("%d %b %Y") %></p>
-      <% if payment.paid == false %>
-        <%= button_to 'Pay', category_payment_pay_path(@category.id, payment.id), method: :put, class: 'btn btn-primary' %>
-      <% else %>
-        <span>Paid</span>
-      <% end %>
-    </div>
-  <% end %>
+    <% end %>
   </div>

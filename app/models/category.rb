@@ -13,4 +13,13 @@ class Category < ApplicationRecord
     end
     total
   end
+
+  def pending_payments
+    payments = self.payments
+    pending = 0
+    payments.each do |payment|
+      pending += payment.amount unless payment.paid
+    end
+    pending
+  end
 end
