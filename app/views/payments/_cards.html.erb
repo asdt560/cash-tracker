@@ -7,10 +7,8 @@
           <p class="money"><%= number_to_currency(payment.amount.fdiv(100)) %></p>
         </div>
         <p class="paydate"><%= payment.created_at.strftime("%d %b %Y") %></p>
-        <% if payment.paid == false %>
-          <%= button_to 'Pay', category_payment_pay_path(@category.id, payment.id), method: :put, class: 'btn btn-primary' %>
-        <% else %>
-          <span>Paid</span>
+        <%= turbo_frame_tag "paybutton" do  %>
+          <%= render 'paybutton', payment: payment%>
         <% end %>
       </div>
     <% end %>

@@ -28,12 +28,12 @@ class PaymentsController < ApplicationController
     print @payment
     @payment.update(paid: true)
     @payment.save
+    update_payments_list
   end
 
   private
   def update_payments_list
-    render turbo_stream: turbo_stream.replace('total', partial: 'total')
-    render turbo_stream: turbo_stream.replace('cards', partial: 'cards', locals: { category: @category, payments: @payments })
+    render turbo_stream: turbo_stream.replace('paybutton', partial: 'payments/paybutton', locals: { payment: @payment })
   end
 
   def payment_params
