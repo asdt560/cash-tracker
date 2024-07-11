@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "pay_button" do  %>
+  <% if payment.paid == false %>
+    <%= button_to "Pay", category_payment_pay_path(@category.id, payment.id), method: :put, class: 'btn btn-primary' %>
+  <% else %>
+    <span>Paid</span>
+  <% end %>
+<% end %>

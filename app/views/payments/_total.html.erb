@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "total" do %>
+  <p class="money">
+    <%= number_to_currency(!@category.nil? ? @category.pending_payments.fdiv(100) : 100) %>
+  </p>
+<% end %>

@@ -8,7 +8,7 @@
         </div>
         <p class="paydate"><%= payment.created_at.strftime("%d %b %Y") %></p>
         <%= turbo_frame_tag "paybutton" do  %>
-          <%= render 'paybutton', payment: payment%>
+          <%= render 'paybutton', payment: payment %>
         <% end %>
       </div>
     <% end %>
