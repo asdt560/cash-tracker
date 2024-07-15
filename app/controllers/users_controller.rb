@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @current_payments = 0
+    @total_payments = 0
+    @user.categories.each do |category|
+      @current_payments += category.pending_payments
+      @total_payments += category.sum_of_payments
+    end
   end
 
   def update
