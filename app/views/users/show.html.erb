@@ -5,5 +5,8 @@
 <div class='container'>
   <p>Total Payments: <%= @total_payments %></p>
   <p>Pending Payments <%= @pending_payments %></p>
+  <%= turbo_frame_tag "paybutton" do  %>
+          <%= render 'paybutton', payment: payment %>
+        <% end %>
   <%= link_to 'Edit User', edit_user_registration_path %>
 </div>
