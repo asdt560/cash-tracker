@@ -10,8 +10,17 @@ class UsersController < ApplicationController
     @user.categories.each do |category|
       @current_payments += category.pending_payments
       @total_payments += category.sum_of_payments
+  end
+
+  def payall
+    @user = current_user
+    @payments = @user.payments.where(paid: false)
+    @payments.each do |payment|
+      payment.update(paid: true)
+      payment.save
     end
   end
+end
 
   def update
     if current_user.update(user_params)

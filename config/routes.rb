@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
   end
   root "users#index"
-  resources :users, only: [:index, :edit, :update, :show]
+  resources :users, only: [:index, :edit, :update, :show] do
+    put '/payall', to: 'users#payall'
+  end
   resources :categories, only: [:index, :new, :create] do
     resources :payments, only: [:index, :new, :create] do
       put '/pay', to: 'payments#pay' 
