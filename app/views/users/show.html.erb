@@ -3,10 +3,10 @@
   <h2>Profile - <%= @user.name %></h2>
 </nav>
 <div class='container'>
-  <p>Total Payments: <%= @total_payments %></p>
-  <p>Pending Payments <%= @pending_payments %></p>
-  <%= turbo_frame_tag "paybutton" do  %>
-          <%= render 'paybutton', payment: payment %>
-        <% end %>
+  <p>Total Payments: <%= number_to_currency(@total_payments.fdiv(100)) %></p>
+  <%= turbo_frame_tag "pending" do %>
+    <%= render(partial: 'pending', locals: { pending_payments: @pending_payments }, formats: [:html]) %>
+  <% end %>
+  <%= render 'paybutton', payment: payment %>
   <%= link_to 'Edit User', edit_user_registration_path %>
 </div>

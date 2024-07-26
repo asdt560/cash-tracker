@@ -5,10 +5,10 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @current_payments = 0
+    @pending_payments = 0
     @total_payments = 0
     @user.categories.each do |category|
-      @current_payments += category.pending_payments
+      @pending_payments += category.pending_payments
       @total_payments += category.sum_of_payments
   end
 
@@ -19,6 +19,11 @@ class UsersController < ApplicationController
       payment.update(paid: true)
       payment.save
     end
+    @pending_payments = 0
+    @user.categories.each do |category|
+      @pending_payments += category.pending_payments
+    render turbo_stream:
+          turbo_stream.replace('pending', partial: 'users/pending', locals: { pending_payments: @pending_payments})
   end
 end
 

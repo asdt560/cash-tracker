@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "pending" do %>
+  <p>Pending Payments <%= number_to_currency(@pending_payments.fdiv(100)) %></p>
+<% end %>
