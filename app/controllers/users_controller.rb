@@ -22,10 +22,10 @@ class UsersController < ApplicationController
     @pending_payments = 0
     @user.categories.each do |category|
       @pending_payments += category.pending_payments
+    end
     render turbo_stream:
           turbo_stream.replace('pending', partial: 'users/pending', locals: { pending_payments: @pending_payments})
   end
-end
 
   def update
     if current_user.update(user_params)
