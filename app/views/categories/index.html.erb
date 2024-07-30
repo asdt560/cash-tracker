@@ -1,7 +1,7 @@
 <nav class='navbar'>
   <%= button_to 'x', destroy_user_session_path, class: "exit", method: :delete %>
   <h2>Categories</h2>
-  <%= button_to 'Profile', user_path(@user.id), class: "profile" %>
+  <%= button_to 'Profile', user_path(@user.id), class: "profile", method: :get %>
 </nav>
 <main class="container two">
   <%= render 'cards' %>

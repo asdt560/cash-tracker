@@ -7,6 +7,6 @@
   <%= turbo_frame_tag "pending" do %>
     <%= render(partial: 'pending', locals: { pending_payments: @pending_payments }, formats: [:html]) %>
   <% end %>
-  <%= render 'paybutton', payment: payment %>
+  <%= button_to "Pay All Pending", user_payall_path(@user.id), method: :put, class: 'btn btn-primary' %>
   <%= link_to 'Edit User', edit_user_registration_path %>
 </div>
