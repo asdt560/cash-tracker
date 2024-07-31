@@ -1,6 +1,7 @@
 <nav class='navbar'>
   <%= link_to "<", categories_path %>
   <h2>Transactions - <%= @category.name %></h2>
+  <%= button_to 'Profile', user_path(@user.id), class: "profile", method: :get %>
 </nav>
 <main class="container three">
     <div class="total">

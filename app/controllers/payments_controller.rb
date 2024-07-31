@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   load_and_authorize_resource except: :create
   def index
+    @user = current_user
     @category = Category.includes(:payments).find(params[:category_id])
     @payments = @category.payments.sort_by(&:created_at).reverse
   end
