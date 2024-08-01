@@ -9,6 +9,9 @@
       <%= turbo_frame_tag "total" do %>
         <%= render(partial: 'total', locals: { category: @category }, formats: [:html]) %>
       <% end %>
+      <% if @category.pending_payments > 0 %>
+        <%= button_to "Pay", category_payment_payall_path, method: :put, class: 'btn btn-primary'  %>
+      <% end %>
     </div>
   <%= render 'cards' %>
   <div class="greenbuttondiv">

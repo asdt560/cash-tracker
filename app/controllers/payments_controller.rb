@@ -32,6 +32,15 @@ class PaymentsController < ApplicationController
     update_payments_list
   end
 
+  def payall
+    @category = Category.includes(:payments).find(params[:category_id])
+    @category.payments.each do |payment|
+      payment.update(paid: true)
+      payment.save
+    end
+    update_payments_list
+  end
+
   private
   def update_payments_list
     @category = Category.includes(:payments).find(params[:category_id])
