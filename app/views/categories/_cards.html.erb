@@ -5,6 +5,9 @@
       <div class="categoryinfo">
         <p><%= category.name %></p>
         <p class="money"><%= number_to_currency(category.pending_payments.fdiv(100))%></p>
+        <% if category.pending_payments > 0 %>
+          <%= button_to "Pay", category_payment_payall_path(category.id), method: :put, class: 'btn btn-primary'  %>
+        <% end %>
       </div>
     </a>
   <% end %>
