@@ -30,7 +30,7 @@
     </div>
       <%= form.hidden_field :paid, value: 'f' %>
     <div class="greenbuttondiv">
-      <%= form.submit "Add Transaction", :class => "greenbutton formbutton" %>
+      <%= form.submit "Add Transaction", :class => "greenbutton formbutton", data: { confirm: "Are you sure you want to submit this form?" } %>
     </div>
   <% end %>
 </div>

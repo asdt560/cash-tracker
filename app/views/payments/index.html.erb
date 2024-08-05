@@ -5,7 +5,7 @@
 </nav>
 <main class="container three">
     <div class="total">
-      <p>Total:</p>
+      <p>Pending:</p>
       <%= turbo_frame_tag "total" do %>
         <%= render(partial: 'total', locals: { category: @category }, formats: [:html]) %>
       <% end %>
