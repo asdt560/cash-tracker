@@ -54,7 +54,8 @@
 ### Key Features <a name="key-features"></a>
 
 - **Categories view:** allows the user to see the categories of transaction and how much they've spent in them, and add new ones.
-- **Payments view:** allows user to see all payments they've made within a category, and add new ones.
+- **Payments view:** allows user to see all payments they've made within a category, and add new ones. Payments have a pay status, starting as unpaid and can be paid individually, per category or in total.
+- **User Profile:** allows user to see total payments, and pendings across categories.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
