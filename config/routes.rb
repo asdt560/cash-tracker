@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     put '/payall', to: 'users#payall'
   end
   resources :categories, only: [:index, :new, :create] do
+      put '/payall', to: 'categories#payall'
     resources :payments, only: [:index, :new, :create] do
       put '/pay', to: 'payments#pay'
-      put '/payall', to: 'payments#payall'
     end
   end
 end

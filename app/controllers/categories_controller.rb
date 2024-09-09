@@ -19,6 +19,28 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def payall
+    @category = Category.includes(:payments).find(params[:category_id])
+    @category.payments.each do |payment|
+      payment.update(paid: true)
+      payment.save
+    end
+    update_payments_list
+  end
+  
+  private
+  def update_payments_list
+    @category = Category.includes(:payments).find(params[:category_id])
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: [
+          turbo_stream.replace('paybutton', partial: 'payments/paybutton', locals: { payment: @payment }),
+          turbo_stream.replace('total', partial: 'payments/total', locals: { category: @category })
+        ]
+      end
+    end
+  end
+  
   def category_params
     params.require(:category).permit(:name, :image)
   end

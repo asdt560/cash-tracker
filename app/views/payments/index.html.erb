@@ -10,7 +10,7 @@
         <%= render(partial: 'total', locals: { category: @category }, formats: [:html]) %>
       <% end %>
       <% if @category.pending_payments > 0 %>
-        <%= button_to "Pay", category_payment_payall_path(@category.id), method: :put, class: 'btn btn-primary'  %>
+        <%= button_to "Pay", category_payall_path(@category.id), method: :put, class: 'btn btn-primary'  %>
       <% end %>
     </div>
   <%= render 'cards' %>
