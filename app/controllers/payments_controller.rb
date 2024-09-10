@@ -32,6 +32,19 @@ class PaymentsController < ApplicationController
     update_payments_list
   end
 
+  private
+  def update_payments_list
+    @category = Category.includes(:payments).find(params[:category_id])
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: [
+          turbo_stream.replace('paybutton', partial: 'payments/paybutton', locals: { payment: @payment }),
+          turbo_stream.replace('total', partial: 'payments/total', locals: { category: @category })
+        ]
+      end
+    end
+  end
+
   def payment_params
     params.require(:payment).permit(:name, :amount, :paid, category_ids: [])
   end
