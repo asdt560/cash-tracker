@@ -4,10 +4,6 @@ a {
   cursor: pointer;
 }
 
-* {
-  font-family: 'Nunito sans', sans-serif;
-}
-
 .container {
   display: flex;
   flex-direction: column;
